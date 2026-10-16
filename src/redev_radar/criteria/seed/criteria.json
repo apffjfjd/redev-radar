@@ -1,0 +1,67 @@
+{
+  "_comment": "초기 시드. 기준값의 실제 수치와 대상 조례는 BD-0004의 미결정 사항이다. 아래 값은 구조를 채우기 위한 예시이며 법령·조례 원문과 대조하지 않았다(verified=false). 시행일도 임의값이다. 실제 분석 전에 국가법령정보센터 원문으로 확인해 수정해야 한다.",
+  "project_types": [
+    {"code": "REDEV_GENERAL", "name": "일반 주택재개발", "sort_order": 1},
+    {"code": "REDEV_STATION", "name": "역세권 관련 정비사업", "sort_order": 2},
+    {"code": "REDEV_SMALL", "name": "소규모재개발", "sort_order": 3}
+  ],
+  "criteria": [
+    {"jurisdiction": "11", "item_code": "AGING_YEARS", "qualifier": "RC", "requirement": "PARAM", "value": 30, "unit": "년", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "노후·불량건축물 기준", "note": "철근콘크리트 등 구조. 실제 조례는 준공연도·용도별로 세분된다."},
+    {"jurisdiction": "11", "item_code": "AGING_YEARS", "qualifier": "OTHER", "requirement": "PARAM", "value": 20, "unit": "년", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "노후·불량건축물 기준", "note": "그 밖의 구조"},
+    {"jurisdiction": "11", "item_code": "SMALL_PARCEL_AREA", "requirement": "PARAM", "value": 90, "unit": "㎡", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "과소필지 기준"},
+    {"jurisdiction": "11", "item_code": "ACCESS_ROAD_WIDTH", "requirement": "PARAM", "value": 4, "unit": "m", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "주택접도율 기준"},
+
+    {"jurisdiction": "11", "item_code": "FAR_ORDINANCE", "qualifier": "ER1", "requirement": "PARAM", "value": 100, "unit": "%", "law_name": "서울특별시 도시계획 조례", "law_article": "용도지역 안에서의 용적률"},
+    {"jurisdiction": "11", "item_code": "FAR_ORDINANCE", "qualifier": "ER2", "requirement": "PARAM", "value": 120, "unit": "%", "law_name": "서울특별시 도시계획 조례", "law_article": "용도지역 안에서의 용적률"},
+    {"jurisdiction": "11", "item_code": "FAR_ORDINANCE", "qualifier": "GR1", "requirement": "PARAM", "value": 150, "unit": "%", "law_name": "서울특별시 도시계획 조례", "law_article": "용도지역 안에서의 용적률"},
+    {"jurisdiction": "11", "item_code": "FAR_ORDINANCE", "qualifier": "GR2", "requirement": "PARAM", "value": 200, "unit": "%", "law_name": "서울특별시 도시계획 조례", "law_article": "용도지역 안에서의 용적률"},
+    {"jurisdiction": "11", "item_code": "FAR_ORDINANCE", "qualifier": "GR3", "requirement": "PARAM", "value": 250, "unit": "%", "law_name": "서울특별시 도시계획 조례", "law_article": "용도지역 안에서의 용적률"},
+    {"jurisdiction": "11", "item_code": "FAR_ORDINANCE", "qualifier": "SEMI_R", "requirement": "PARAM", "value": 400, "unit": "%", "law_name": "서울특별시 도시계획 조례", "law_article": "용도지역 안에서의 용적률"},
+
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "MIN_AREA", "requirement": "REQUIRED", "operator": ">=", "value": 10000, "unit": "㎡", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "AGED_COUNT_RATIO", "requirement": "REQUIRED", "operator": ">=", "value": 0.6, "unit": "비율", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "AGED_FLOOR_RATIO", "requirement": "OPTIONAL", "operator": ">=", "value": 0.6, "unit": "비율", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "ROAD_ACCESS_RATIO", "requirement": "OPTIONAL", "operator": "<=", "value": 0.4, "unit": "비율", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "SMALL_PARCEL_RATIO", "requirement": "OPTIONAL", "operator": ">=", "value": 0.4, "unit": "비율", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "HOUSEHOLD_DENSITY", "requirement": "OPTIONAL", "operator": ">=", "value": 60, "unit": "호/ha", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "SEMI_BASEMENT_RATIO", "requirement": "OPTIONAL", "operator": ">=", "value": 0.5, "unit": "비율", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_GENERAL", "item_code": "MIN_OPTIONAL_COUNT", "requirement": "PARAM", "value": 1, "unit": "개", "law_name": "서울특별시 도시 및 주거환경정비 조례", "law_article": "정비계획 입안대상지역 요건", "note": "선택 요건 중 충족해야 하는 최소 개수"},
+
+    {"jurisdiction": "11", "project_type": "REDEV_STATION", "item_code": "MIN_AREA", "requirement": "REQUIRED", "operator": ">=", "value": 3000, "unit": "㎡", "law_name": "서울특별시 역세권 장기전세주택 건립 운영기준", "law_article": "대상지 요건"},
+    {"jurisdiction": "11", "project_type": "REDEV_STATION", "item_code": "STATION_DISTANCE", "requirement": "REQUIRED", "operator": "<=", "value": 350, "unit": "m", "law_name": "서울특별시 역세권 장기전세주택 건립 운영기준", "law_article": "역세권 범위", "note": "운영기준은 승강장 경계 기준이나 본 시스템은 역 중심점~블록 중심점 직선거리로 예비 판정한다."},
+    {"jurisdiction": "11", "project_type": "REDEV_STATION", "item_code": "AGED_COUNT_RATIO", "requirement": "REQUIRED", "operator": ">=", "value": 0.6, "unit": "비율", "law_name": "서울특별시 역세권 장기전세주택 건립 운영기준", "law_article": "대상지 요건"},
+
+    {"jurisdiction": "*", "project_type": "REDEV_SMALL", "item_code": "MAX_AREA", "requirement": "REQUIRED", "operator": "<", "value": 5000, "unit": "㎡", "law_name": "빈집 및 소규모주택 정비에 관한 특례법 시행령", "law_article": "소규모재개발사업 대상지역"},
+    {"jurisdiction": "*", "project_type": "REDEV_SMALL", "item_code": "AGED_COUNT_RATIO", "requirement": "REQUIRED", "operator": ">=", "value": 0.6667, "unit": "비율", "law_name": "빈집 및 소규모주택 정비에 관한 특례법 시행령", "law_article": "소규모재개발사업 대상지역"},
+    {"jurisdiction": "11", "project_type": "REDEV_SMALL", "item_code": "STATION_DISTANCE", "requirement": "REQUIRED", "operator": "<=", "value": 350, "unit": "m", "law_name": "서울특별시 빈집 및 소규모주택 정비에 관한 조례", "law_article": "역세권 범위", "note": "역 중심점~블록 중심점 직선거리로 예비 판정한다."}
+  ],
+  "assumptions": [
+    {"key": "STATION_AREA_RADIUS_M", "value": 500, "unit": "m", "note": "후보 블록 탐색 범위(역 중심 직선거리). 역세권 판정 기준은 미결정 사항."},
+    {"key": "BLOCK_ROAD_WIDTH_M", "qualifier": "FINE", "value": 4, "unit": "m", "note": "이 폭 이상의 도로로 블록을 나눈다. qualifier마다 후보 경계가 하나씩 생성된다."},
+    {"key": "BLOCK_ROAD_WIDTH_M", "qualifier": "MEDIUM", "value": 8, "unit": "m"},
+    {"key": "BLOCK_ROAD_WIDTH_M", "qualifier": "COARSE", "value": 12, "unit": "m"},
+    {"key": "BLOCK_MIN_PARCELS", "value": 5, "unit": "필지"},
+    {"key": "BLOCK_MIN_AREA_M2", "value": 1000, "unit": "㎡"},
+    {"key": "BLOCK_MIN_STATION_SHARE", "value": 0.5, "unit": "비율", "note": "블록 면적 중 역세권 탐색 범위에 들어야 하는 최소 비율"},
+    {"key": "BLOCK_MIN_RESIDENTIAL_SHARE", "value": 0.5, "unit": "비율", "note": "블록 면적 중 주거지역이어야 하는 최소 비율. 용도지역 자료가 없으면 적용하지 않는다."},
+    {"key": "RECENT_BUILD_YEARS", "value": 10, "unit": "년", "note": "최근 신축으로 보는 경과연수"},
+    {"key": "AGED_CLUSTER_RADIUS_M", "value": 30, "unit": "m", "note": "노후 건축물 밀집도 산정 반경"},
+    {"key": "WALK_MAX_DISTANCE_M", "value": 3000, "unit": "m", "note": "보행거리 탐색 상한"},
+    {"key": "ZONE_OVERLAP_FULL_RATIO", "value": 0.9, "unit": "비율", "note": "이 비율 이상 겹치면 기존 정비구역에 포함된 것으로 본다."},
+    {"key": "TX_LOOKBACK_MONTHS", "value": 36, "unit": "개월"},
+    {"key": "TX_MIN_COUNT", "value": 5, "unit": "건", "note": "이보다 거래가 적으면 가격 수준을 '추정 불가'로 둔다."},
+
+    {"key": "DEVELOPABLE_FAR", "scenario": "LOW", "qualifier": "GR1", "value": 150, "unit": "%", "source": "현행 용도지역 조례 용적률"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "BASE", "qualifier": "GR1", "value": 200, "unit": "%", "source": "현행 용도지역 법정 상한"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "HIGH", "qualifier": "GR1", "value": 250, "unit": "%", "source": "1단계 종상향 가정"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "LOW", "qualifier": "GR2", "value": 200, "unit": "%", "source": "현행 용도지역 조례 용적률"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "BASE", "qualifier": "GR2", "value": 250, "unit": "%", "source": "현행 용도지역 법정 상한"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "HIGH", "qualifier": "GR2", "value": 300, "unit": "%", "source": "1단계 종상향 가정"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "LOW", "qualifier": "GR3", "value": 250, "unit": "%", "source": "현행 용도지역 조례 용적률"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "BASE", "qualifier": "GR3", "value": 300, "unit": "%", "source": "현행 용도지역 법정 상한"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "HIGH", "qualifier": "GR3", "value": 500, "unit": "%", "source": "1단계 종상향(준주거) 가정"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "LOW", "qualifier": "SEMI_R", "value": 400, "unit": "%", "source": "현행 용도지역 조례 용적률"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "BASE", "qualifier": "SEMI_R", "value": 500, "unit": "%", "source": "현행 용도지역 법정 상한"},
+    {"key": "DEVELOPABLE_FAR", "scenario": "HIGH", "qualifier": "SEMI_R", "value": 500, "unit": "%", "source": "현행 용도지역 법정 상한"}
+  ]
+}

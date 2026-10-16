@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>역세권 재개발 후보지역 탐색</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <h1>역세권 재개발 후보지역 탐색</h1>
+      <span id="run-info" class="run-info"></span>
+    </div>
+    <div class="controls">
+      <label>분석 실행
+        <select id="run"></select>
+      </label>
+      <label>후보 경계
+        <select id="variant"></select>
+      </label>
+      <label>색상 기준
+        <select id="color-by"></select>
+      </label>
+    </div>
+  </header>
+
+  <div id="banner" class="banner" hidden></div>
+
+  <main class="layout">
+    <section class="map-wrap">
+      <div id="map"></div>
+      <div id="legend" class="legend"></div>
+    </section>
+    <aside id="panel" class="panel">
+      <div class="placeholder">
+        <p>지도에서 후보 블록을 선택하면 분석 결과를 볼 수 있습니다.</p>
+        <ul id="notices" class="notices"></ul>
+      </div>
+    </aside>
+  </main>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
